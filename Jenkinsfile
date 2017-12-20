@@ -3,7 +3,7 @@
 stage 'Dev'
 node {
     checkout scm
-    mvn 'clean -Dmaven.test.skip=true'
+    mvn ' -Dmaven.test.skip=true'
     
 }
 
