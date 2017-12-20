@@ -18,7 +18,7 @@ parallel(longerTests: {
 stage name: 'Production', concurrency: 1
 
 def mvn(args) {
-    sh "mvn ${args}"
+    sh "mvn -Dmaven.test.skip=true"
 }
 
 def runTests(duration) {
