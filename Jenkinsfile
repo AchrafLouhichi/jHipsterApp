@@ -3,7 +3,7 @@
 stage 'Dev'
 node {
     checkout scm
-    mvn 'clean package'
+    mvn 'clean package -Dmaven.test.skip=true'
     dir('target') {stash name: 'war', includes: 'x.war'}
 }
 
@@ -18,7 +18,7 @@ parallel(longerTests: {
 stage name: 'Production', concurrency: 1
 
 def mvn(args) {
-    sh "mvn -Dmaven.test.skip=true"
+    sh "mvn ${args}"
 }
 
 def runTests(duration) {
