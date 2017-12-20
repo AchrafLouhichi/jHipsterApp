@@ -3,8 +3,8 @@
 stage 'Dev'
 node {
     checkout scm
-    mvn 'clean install -Dmaven.test.skip=true'
-    dir('target') {stash name: 'war', includes: 'x.war'}
+    mvn 'clean -Dmaven.test.skip=true'
+    #dir('target') {stash name: 'war', includes: 'x.war'}
 }
 
 stage 'QA'
