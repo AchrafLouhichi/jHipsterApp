@@ -4,7 +4,7 @@ stage 'Dev'
 node {
     checkout scm
     mvn 'clean -Dmaven.test.skip=true'
-    #dir('target') {stash name: 'war', includes: 'x.war'}
+    
 }
 
 stage 'QA'
